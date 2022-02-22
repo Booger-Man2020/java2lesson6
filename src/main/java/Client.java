@@ -40,6 +40,7 @@ public class Client {
         new Thread(new Runnable() {
             @Override
             public void run() {
+
                 try {
                     while (true) {
                         out = new DataOutputStream(new DataOutputStream(socket.getOutputStream()));
@@ -66,6 +67,7 @@ public class Client {
             in.close();
             out.close();
             socket.close();
+            System.exit(1);
 
         } catch (IOException e) {
             e.printStackTrace();
